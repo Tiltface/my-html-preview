@@ -5,7 +5,7 @@ app = Flask(name)
 
 @app.route('/')
 def home():
-    return render_template('index.html')
+    return render_template('index.html', time_until_reset=calculate_time_until_reset())
 
 def calculate_time_until_reset():
     today = datetime.datetime.now()
